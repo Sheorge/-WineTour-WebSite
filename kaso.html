@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>WINE ITALY</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/kasostyle.css">
+    <meta name="viewport" content="width=device-width,user-scalable=no" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!---------
+*JavaScript
+----------->
+    <script>$(function() {
+    var isDisplay = false;
+    var TopBtn= $('#PageTopBtn');
+    TopBtn.css('bottom', '-200px');
+    var isDisplay = false;
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 100) {
+            if (isDisplay == false) {
+                isDisplay = true;
+                TopBtn.stop().animate({'bottom' : '-10px'}, 200);
+            }
+        } 
+        else {
+            if (isDisplay) {
+                isDisplay = false;
+                TopBtn.stop().animate({'bottom' : '-200px'}, 200); 
+            }
+        }
+    });
+    TopBtn.click(function() {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 1400);
+        return false;
+    });
+});</script>
+    <script>
+        $(function() {
+ $('.navbar_toggle').on('click', function () {
+  $(this).toggleClass('open');
+  $('.menu').toggleClass('open');
+ });
+});
+</script>
+    <!---------
+*/JavaScript
+----------->
+    <nav>
+        <div class="drawer"> <a class="navbar_brand" href="index.html"><img src="img/logo.png" width="96" height="48" alt="Wine Italy"/></a>
+            <div class="navbar_toggle"> <span class="navbar_toggle_icon"></span> <span class="navbar_toggle_icon"></span> <span class="navbar_toggle_icon"></span> </div>
+        </div>
+        <div class="menu">
+            <ul>
+                <li class="logo"><a href="index.html"><img src="img/logo.png" width="96" height="48" alt="Wine Italy"/></a></li>
+                <li><a href="#">ワインツアー</a></li>
+                <li><a href="#">お申込み</a></li>
+                <li><a href="#">会社案内</a></li>
+                <li><a href="#">お問い合わせ</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div id="tosuka">
+        <div id="tosukatour"><img class="pics" src="img/firenze.jpg" width="5184" height="3456" alt="フィレンツェ"/>
+            <div id="tosukainfo">
+                <h1>トスカーナ<br/>
+        ワインツアー</h1>
+                <p>　フィレンツェから日帰りで行く、トスカーナワインツアー。<br />
+                    　トスカーナ地方では、世界中で愛される「キャンティワイン」の魅力をご堪能いただけます。<br />
+                    　試飲や購入はもちろん、トスカーナ地方の素晴らしい景観とともに、チーズとの相性抜群なキャンティワインの味を飲み比べしていただくことで、あなたのお気に入りの一本に出会えるかもしれません。</p>
+                <div id="btn">
+                    <button type="button" class="btn min" 　autofocus="true">
+                        <a href="#">お申込みはこちら<img src="img/arrow.png" width="13" height="13" alt="矢印"/></a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="toursche" class="clearfix">
+        <p class="left"><img src="img/leafl.png" width="200" height="160" alt="ぶどうの葉"/></p>
+            <p class="right"><img src="img/leafr.png" width="200" height="160" alt="ぶどうの葉"/></p>
+                <h2>ツアースケジュール</h2>
+    </div>
+    <div id="scheinfo">
+        <div id="monte"> <img class="pics" src="img/sche1.jpg" width="1920" height="960" alt="モンテルゴ広場バス停前"/>
+            <p>　13:00　モンテルゴ広場バス停前集合<br />
+                <br />
+                　フィレンツェ中央駅の16番ホームから真っすぐ続いている Passaggio Binario 16 という通路を進んでいただければ、モンテルンゴ広場にたどり着きます。</p>
+        </div>
+        <div id="canti"> <img class="pics" src="img/sche2.jpg" width="5472" height="3648" alt="キャンティ・クラシコ"/>
+            <p>　14:30　キャンティ・クラシコ訪問<br />
+                <br />
+                　キャンティ街道を進み、「キャンティ・クラシコ」にて、高品質なイタリアンワインを製造するワイン農場を訪れ、ブルスケッタやサラミ、コールドミートといったワインと合うおつまみと共にお試しいただけます。</p>
+        </div>
+        <div id="gure-ve"> <img class="pics" src="img/sche3.jpeg" width="2048" height="1150" alt="グレーヴェ・イン・キャンティ"/>
+            <p>　16:00　グレーヴェ・イン・キャンティ観光<br />
+                <br />
+                　イタリアで最も重要な「ワインの町」の一つである、グレーヴェ・イン・キャンティへ立ち寄ります。オープンギャラリーや工芸品店が並ぶ街の大広場での散策もお楽しみくださいませ。</p>
+        </div>
+        <div id="fami"> <img class="pics" src="img/sche4.jpg" width="6000" height="4000" alt="家族経営のワイナリー"/>
+            <p>　17:30　家族経営のワイナリーを訪問<br />
+                <br />
+                　始めにワインセラーと庭園を訪れていただき、4種のワインと、特産品のおつまみとともにテイスティングしていただけます。</p>
+        </div>
+        <div id="last"> <img class="pics" src="img/sche5.jpg" width="5184" height="3456" alt="モンテルゴ広場バス停前"/>
+            <p>　19:00　モンテルゴ広場バス停前にてツアー終了<br />
+                <br />
+                　モンテルンゴ広場CAF TOUR & TRAVEL - GRAY LINEのバス停前にて解散。</p>
+        </div>
+        <div id="omoushi">
+            <div class="omoushibtn">
+                <button type="button" class="btn min" 　autofocus="true">
+                    <a href="#"><img  src="img/winel.png" style="height: 110px;" alt="ワインとワイングラス"/>
+      <p>お申込みはこちら</p>
+      <img src="img/winer.png" style="height: 110px;" alt="ワインとワイングラス"/></a>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="footer"> <a href="#"><img src="img/logo.png" width="180" height="90" alt="Wine Italy"/></a>
+        <p class="big">名古屋市中区錦三丁目１－２－３</p>
+        <p>ご予約・お問い合わせはこちら</p>
+        <p class="big">052-123-5678</p>
+        <p>営業時間：10:00~19:00</p>
+        <a href="#"><img src="img/face.png" width="32" height="32" alt="facebook"/></a> <a href="#"><img src="img/insta.png" width="32" height="32" alt="instagram"/></a>
+        <div>
+            <p class="small kaisha"><a href="#">企業概要</a></p>
+            <p class="small kaisha"><a href="#">プライバシーポシリー</a></p>
+            <p class="small kaisha"><a href="#">お問い合わせ</a></p>
+            <p class="small">Copyright(c) 2019 Shoji Yamada WINE All Rights Reserved.</p>
+        </div>
+    </div>
+    <p id="PageTopBtn"><a href="#wrap">⬆Page Top</a></p>
+</body>
+
+</html>

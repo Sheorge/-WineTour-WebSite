@@ -1,0 +1,838 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	font-size: 18px;
+	font-family: Georgia, 游明朝, "Yu Mincho", YuMincho, "Hiragino Mincho ProN", HGS明朝E, メイリオ, Meiryo, serif;
+	background-color: #EAEEE5;
+	animation: fadeIn 4s ease 0s 1 normal;
+	-webkit-animation: fadeIn 4s ease 0s 1 normal;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0
+	}
+	100% {
+		opacity: 1
+	}
+}
+
+@-webkit-keyframes fadeIn {
+	0% {
+		opacity: 0
+	}
+	100% {
+		opacity: 1
+	}
+}
+
+a {
+	text-decoration: none;
+}
+
+nav {
+	width: 100%;
+	height: 52px;
+	position: fixed;
+	background: #350;
+	z-index: 99999;
+}
+
+nav a {
+	color: #fff;
+}
+
+.drawer {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+	height: 52px;
+	padding: 0 1em;
+}
+
+.navbar_toggle {
+	z-index: 9999;
+}
+
+.navbar_toggle_icon {
+	position: relative;
+	display: block;
+	height: 2px;
+	width: 30px;
+	background: #fff;
+	-webkit-transition: ease .5s;
+	transition: ease .5s;
+}
+
+.navbar_toggle_icon:nth-child(1) {
+	top: 0;
+}
+
+.navbar_toggle_icon:nth-child(2) {
+	margin: 8px 0;
+}
+
+.navbar_toggle_icon:nth-child(3) {
+	top: 0;
+}
+
+.navbar_toggle.open .navbar_toggle_icon:nth-child(1) {
+	top: 10px;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.navbar_toggle.open .navbar_toggle_icon:nth-child(2) {
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	opacity: 0;
+}
+
+.navbar_toggle.open .navbar_toggle_icon:nth-child(3) {
+	top: -10px;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+.menu {
+	-webkit-transform: translateX(-100%);
+	transform: translateX(-100%);
+	-webkit-transition: ease .5s;
+	transition: ease .5s;
+	z-index: 1000;
+	width: 100%;
+}
+
+.menu ul li {
+	padding: 2em;
+	border-bottom: 1px solid #CCC;
+	background: #350;
+	opacity: 0.85;
+}
+
+.menu.open {
+	-webkit-transform: translateX(0);
+	transform: translateX(0);
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+@media screen and (min-width: 768px) {
+	.navbar_brand {
+		display: none;
+	}
+	nav {
+		display: flex;
+		flex-direction: row;
+	}
+	.navbar_toggle {
+		display: none;
+	}
+	.drawer {
+		padding: 0;
+	}
+	.menu {
+		width: 100%;
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+	}
+	.menu ul {
+		height: 52px;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		margin: 0 auto;
+		width: 1000px;
+	}
+	.menu ul li {
+		padding: 0 5.4%;
+		border-bottom: none;
+	}
+	.menu a:hover {
+		opacity: 0.6;
+	}
+}
+
+.viewer {
+	margin: 0 auto;
+	width: 1400px;
+	height: 752px;
+	text-align: left;
+	overflow: hidden;
+	z-index: 1;
+	box-shadow: 0px 0px 100px 30px #bba;
+}
+
+.viewer ul {
+	width: 1400px;
+	height: 752px;
+	text-align: left;
+	overflow: hidden;
+	position: relative;
+}
+
+.viewer ul li {
+	top: 52px;
+	left: 0;
+	width: 1400px;
+	height: 752px;
+	display: none;
+	position: absolute;
+}
+
+#preface {
+	background-color: #460;
+	font-size: 36px;
+	color: #fff;
+	padding: 90px 0 60px;
+	text-align: center;
+	margin-top: -1px;
+}
+
+#preface .left {
+	margin-top: -60px;
+	margin-left: 20px;
+	float: left;
+}
+
+#preface .right {
+	margin-top: -60px;
+	margin-right: 20px;
+	float: right;
+}
+
+#preface h2 {
+	margin: 0 auto;
+	border-bottom: 1px solid #fff;
+	padding-bottom: 20px;
+	width: 55%;
+	text-align: center;
+	letter-spacing: 0.145em;
+}
+
+#italian {
+	width: 90%;
+	padding-bottom: 120px;
+	margin: 0 auto;
+	background: linear-gradient(270deg, rgba(234, 238, 229, 1)42%, transparent 70%), url("../img/pizza.jpg");
+	margin-top: 60px;
+	background-size: auto 120%;
+	background-repeat: no-repeat;
+}
+
+#pizza img {
+	display: none;
+}
+
+#italian p {
+	color: #333;
+	font-size: 16px;
+	width: 30%;
+	margin: 0 auto;
+	padding: 90px 6% 45px 60%;
+	line-height: 3em;
+	text-align: left;
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "游ゴシック Medium", YuGothic, YuGothicM, "Hiragino Kaku Gothic ProN", メイリオ, Meiryo, sans-serif;
+}
+
+#italian .btn {
+	border-radius: 10px;
+	background-color: #460;
+	padding: 30px 35px 30px 40px;
+	color: white;
+	font-size: 18px;
+	margin: 0 0 90px 55%;
+	box-shadow: 10px 15px 50px 2px #aaa;
+	font-family: Georgia, 游明朝, "Yu Mincho", YuMincho, "Hiragino Mincho ProN", HGS明朝E, メイリオ, Meiryo, serif;
+	transition-duration: 0.3s;
+}
+
+#italian .btn:hover {
+	padding: 35px 45px 35px 50px;
+}
+
+#italian .btn:active {
+	padding: 30px 35px 30px 40px;
+}
+
+#italian .btn img {
+	padding-left: 10px;
+}
+
+#info {
+	margin: 0 auto;
+	color: #460;
+	background: linear-gradient(to top, transparent 20%, rgba(234, 238, 229, 1)50%), url("../img/vineyard.jpg");
+	padding: 120px 0 350px;
+	background-size: auto 100%;
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+#info a {
+	color: #460;
+}
+
+#info h2 {
+	font-size: 36px;
+	margin: 0 auto;
+	border-bottom: 1px solid #460;
+	padding-bottom: 20px;
+	width: 800px;
+	text-align: center;
+	letter-spacing: 0.145em;
+	margin-bottom: 25px;
+}
+
+#info dl {
+	margin: 0 auto;
+	width: 500px;
+	font-size: 0.85em;
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "游ゴシック Medium", YuGothic, YuGothicM, "Hiragino Kaku Gothic ProN", メイリオ, Meiryo, sans-serif;
+	border-bottom: 1px solid #460;
+	padding: 35px 0 15px;
+}
+
+#info dl dt {
+	float: left;
+	width: 5em;
+	padding: 5px 0 5px 1em;
+}
+
+#info dl dd {
+	padding: 5px 0 5px 8.75em;
+}
+
+.infobtn {
+	text-align: center;
+	padding-top: 60px;
+	transition-duration: 0.4s;
+	width: 200px;
+	margin: auto;
+}
+
+.infobtn:hover {
+	transform: scale(1.1);
+}
+
+.infobtn:active {
+	transform: scale(1.00);
+	transition-duration: 0.1s;
+}
+
+#info .btn {
+	text-align: center;
+	border-radius: 10px;
+	background-color: #460;
+	padding: 15px 35px 15px 40px;
+	color: white;
+	font-size: 14px;
+	box-shadow: 10px 15px 50px 2px #888;
+	width: 200px;
+}
+
+#info .btn img {
+	padding-left: 10px;
+}
+
+#winetour {
+	background-color: #460;
+	font-size: 36px;
+	color: #fff;
+	padding: 90px 0 70px;
+	text-align: center;
+	margin-top: -1px;
+}
+
+#winetour .left {
+	margin-top: -60px;
+	margin-left: 20px;
+	float: left;
+}
+
+#winetour .right {
+	margin-top: -60px;
+	margin-right: 20px;
+	float: right;
+}
+
+#winetour h2 {
+	margin: 0 auto;
+	border-bottom: 1px solid #fff;
+	padding-bottom: 20px;
+	width: 55%;
+	text-align: center;
+	letter-spacing: 0.145em;
+}
+
+#tourinfo {
+	background-color: #EAEEE5;
+	width: 1000px;
+	margin: 0 auto;
+}
+
+#tourinfo {
+	color: #000;
+}
+
+#tosuka .img, #piemo .img {
+	transition-duration: 0.4s;
+}
+
+#tourinfo .img:hover {
+	transform: scale(1.08);
+}
+
+#tourinfo .img:active {
+	transform: scale(1.00);
+	transition-duration: 0.1s;
+}
+
+#tosuka {
+	margin-top: 160px;
+	width: 650px;
+	height: auto;
+	background-color: #fff;
+	float: right;
+	box-shadow: 10px 15px 50px 2px #AAA;
+}
+
+#tosuka img {
+	width: 90%;
+	height: auto;
+	margin-top: -40px;
+	margin-left: -70%;
+	box-shadow: 10px 15px 50px 2px #AAA;
+}
+
+#tosukainfo {
+	width: 60%;
+	float: right;
+	padding: 60px 10%;
+	max-width: 650px;
+	font-size: 16px;
+	box-shadow: none;
+}
+
+#grape img {
+	box-shadow: none;
+	float: right;
+	width: 35%;
+	margin-top: -60px;
+	margin-right: -16%;
+	margin-left: 0;
+}
+
+#tourinfo h3 {
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "游ゴシック Medium", YuGothic, YuGothicM, "Hiragino Kaku Gothic ProN", メイリオ, Meiryo, sans-serif;
+	border-bottom: 1px solid #460;
+	padding-bottom: 10px;
+	font-size: 24px;
+}
+
+#tourinfo p {
+	padding-top: 40px;
+	line-height: 50px;
+}
+
+#link {
+	float: right;
+}
+
+#link a {
+	color: #000;
+}
+
+#link a:hover {
+	opacity: 0.5;
+}
+
+#link:hover {
+	opacity: 0.5;
+}
+
+#link img {
+	float: left;
+	margin: 19px 0;
+	box-shadow: none;
+	padding-left: 5px;
+}
+
+#link p {
+	padding-top: 0px;
+	float: left;
+}
+
+#piemo {
+	margin-top: 160px;
+	width: 650px;
+	height: auto;
+	margin-right: 100%;
+	background-color: #fff;
+	float: left;
+	box-shadow: 10px 15px 50px 2px #AAA;
+}
+
+#piemo img {
+	width: 90%;
+	height: auto;
+	margin-top: -40px;
+	margin-right: -70%;
+	box-shadow: 10px 15px 50px 2px #AAA;
+	z-index: 3;
+}
+
+#piemoinfo {
+	width: 60%;
+	float: left;
+	padding: 60px 10%;
+	max-width: 650px;
+	font-size: 16px;
+	box-shadow: none;
+}
+
+#piemo #grape img {
+	box-shadow: none;
+	float: left;
+	width: 35%;
+	margin-top: -60px;
+	margin-left: -16%;
+	margin-right: 0;
+}
+
+#piemo #link {
+	float: right;
+}
+
+#piemo #link img {
+	float: left;
+	margin: 19px 0;
+	box-shadow: none;
+	padding-left: 5px;
+}
+
+#piemo #link p {
+	padding-top: 0px;
+	float: left;
+}
+
+#tourinfo .infobtn {
+	width: 400px;
+}
+
+.tourbtn {
+	text-align: center;
+}
+
+#tourinfo .btn {
+	margin: 120px;
+	height: 130px;
+	border-radius: 10px;
+	background-color: #460;
+	font-size: 18px;
+	box-shadow: 10px 15px 50px 2px #aaa;
+	padding: 0 20px;
+	transition-duration: 0.4s;
+}
+
+#tourinfo .btn:hover {
+	transform: scale(1.08);
+}
+
+#tourinfo .btn:active {
+	transform: scale(1.00);
+	transition-duration: 0.1s;
+}
+
+#tourinfo .btn p {
+	float: left;
+	font-family: Georgia, 游明朝, "Yu Mincho", YuMincho, "Hiragino Mincho ProN", HGS明朝E, メイリオ, Meiryo, serif;
+	padding: 40px 20px;
+	font-size: 22px;
+	color: #fff;
+}
+
+#tourinfo .btn img {
+	float: left;
+	padding: 8px;
+}
+
+#access {
+	background-color: #460;
+	font-size: 36px;
+	color: #fff;
+	padding: 90px 0 0;
+	text-align: center;
+}
+
+#access h2 {
+	margin: 0 auto;
+	border-bottom: 1px solid #fff;
+	padding-bottom: 20px;
+	width: 55%;
+	text-align: center;
+	letter-spacing: 0.145em;
+}
+
+#access p {
+	font-size: 16px;
+	padding: 20px 0 50px;
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "游ゴシック Medium", YuGothic, YuGothicM, "Hiragino Kaku Gothic ProN", メイリオ, Meiryo, sans-serif;
+}
+
+.fadein {
+	opacity: 0;
+	transform: translateY(100px);
+	transition: all 2s;
+}
+
+#footer {
+	text-align: center;
+	background-color: #350;
+	color: #fff;
+	font-size: 16px;
+	padding-bottom: 20px;
+}
+
+#footer p {
+	padding: 15px;
+}
+
+.bigger {
+	font-size: 20px;
+}
+
+.big {
+	font-size: 30px;
+}
+
+#footer img {
+	padding: 20px;
+	display: inline-block;
+}
+
+.small {
+	font-size: 12px;
+}
+
+.small a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.kaisha {
+	display: inline-block;
+}
+
+#PageTopBtn {
+	position: fixed;
+	bottom: -10px;
+	right: 10px;
+	font-size: 18px;
+	z-index: 999;
+}
+
+#PageTopBtn a {
+	display: block;
+	text-decoration: none;
+	color: #fff;
+	background: #350;
+	text-align: center;
+	border-radius: 5%;
+	outline: none;
+}
+
+#PageTopBtn a:hover {
+	text-decoration: none;
+	color: #350;
+	background: #efd;
+}
+
+#PageTopBtn {
+	font-size: 18px;
+}
+
+#PageTopBtn a {
+	width: 150px;
+	height: 25px;
+	padding: 24px 0;
+}
+
+@media screen and (max-width: 1200px) {
+	.viewer {
+		width: 100%;
+		height: auto;
+	}
+	.viewer ul {
+		width: 120%;
+		height: 667px;
+		left: -12%;
+	}
+	.viewer ul li {
+		width: 100%;
+		height: auto;
+	}
+}
+
+@media screen and (max-width: 1023px) {
+	.viewer ul {
+		height: 514px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	#PageTopBtn {
+		font-size: 10px;
+	}
+	#PageTopBtn a {
+		width: 70px;
+		height: 13px;
+		padding: 17px 0;
+	}
+	.logo {
+		display: none;
+	}
+	.viewer ul {
+		height: 455px;
+	}
+	#preface {
+		padding: 60px 0 0;
+	}
+	#preface img {
+		display: none;
+	}
+	#preface h2 {
+		width: 95%;
+		font-size: 24px;
+	}
+	#italian {
+		margin-top: 20px;
+		background: none;
+		padding-bottom: 30px
+	}
+	#pizza img {
+		display: block;
+		width: 100%;
+		height: auto;
+		padding-top: 10px;
+	}
+	#pizzasent {
+		background-color: #EAEEE5;
+		padding: 10px 0 70px;
+	}
+	#italian p {
+		width: 100%;
+		padding: 0 0 70px;
+		line-height: 2em;
+		width: 90%;
+	}
+	#italian .btn {
+		margin: 20px 0;
+	}
+	#winetour img {
+		display: none;
+	}
+	#info {
+		padding: 100px 0 200px;
+	}
+	#info h2 {
+		width: 95%;
+		font-size: 30px;
+	}
+	#info dl {
+		width: 90%;
+		padding: 20px 0 10px;
+	}
+	#tourinfo {
+		width: 100%;
+	}
+	#tourinfo p {
+		line-height: 40px;
+	}
+	#winetour {
+		padding: 60px 0 30px;
+	}
+	#grape img {
+		margin: 0;
+		width: 25%;
+		margin-top: -10px;
+	}
+	#piemo #grape img {
+		margin: 0;
+		width: 25%;
+		margin-top: -10px;
+	}
+	#winetour h2 {
+		width: 90%;
+		font-size: 30px;
+	}
+	#tosukainfo {
+		width: 85%;
+		padding: 60px 8% 40px;
+	}
+	#piemoinfo {
+		width: 85%;
+		padding: 60px 8% 40px;
+	}
+	#piemo {
+		width: 95%;
+		margin-top: 100px;
+	}
+	#piemo img {
+		margin-right: 0%;
+	}
+	#piemo #link img {
+		margin: 13px 0;
+	}
+	#tosuka {
+		width: 95%;
+		margin-top: 100px;
+	}
+	#tosuka img {
+		margin-left: 0%;
+	}
+	#tosuka #link img {
+		margin: 13px 0;
+	}
+	#tourinfo .btn {
+		margin: 80px 20px;
+		height: 100px;
+	}
+	#tourinfo .btn img {
+		display: none;
+	}
+	#tourinfo .btn p {
+		padding: 0 20px;
+	}
+	#access h2 {
+		width: 90%;
+	}
+}
+
+@media screen and (max-width: 670px) {
+	.viewer ul {
+		height: 397px;
+	}
+}
+
+@media screen and (max-width: 575px) {
+	.viewer ul {
+		height: 337px;
+	}
+}
+
+@media screen and (max-width: 475px) {
+	.viewer ul {
+		height: 277px;
+	}
+}
+
+@media screen and (max-width: 374px) {
+	.viewer ul {
+		height: 244px;
+	}
+}

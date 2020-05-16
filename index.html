@@ -1,0 +1,268 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>WINE ITALY</title>
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/style.css">
+		<meta name="viewport" content="width=device-width,user-scalable=no" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<!---------
+*JavaScript
+----------->
+		<script>
+			$(function ()
+			{
+				$(window).scroll(function ()
+				{
+					$('.fadein').each(function ()
+					{
+						var targetElement = $(this).offset().top;
+						var scroll = $(window).scrollTop();
+						var windowHeight = $(window).height();
+						if (scroll > targetElement - windowHeight + 200)
+						{
+							$(this).css('opacity', '1');
+							$(this).css('transform', 'translateY(0)');
+						}
+					});
+				});
+			});
+		</script>
+		<script>
+			$(function ()
+			{
+				$('.navbar_toggle').on('click', function ()
+				{
+					$(this).toggleClass('open');
+					$('.menu').toggleClass('open');
+				});
+			});
+		</script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+		<script>
+			$(function ()
+			{
+				var $setElm = $('.viewer'),
+					fadeSpeed = 3000;
+				switchDelay = 5000;
+				$setElm.each(function ()
+				{
+					var targetObj = $(this);
+					var findUl = targetObj.find('ul');
+					var findLi = targetObj.find('li');
+					var findLiFirst = targetObj.find('li:first');
+					findLi.css({ display: 'block', opacity: '0', zIndex: '99' });
+					findLiFirst.css({ zIndex: '100' }).stop().animate({ opacity: '1' }, fadeSpeed);
+					setInterval(function ()
+					{
+						findUl.find('li:first-child').animate({ opacity: '0' }, fadeSpeed).next('li').css({ zIndex: '100' }).animate({ opacity: '1' }, fadeSpeed).end().appendTo(findUl).css({ zIndex: '99' });
+					}, switchDelay);
+				});
+			});
+		</script>
+		<script>$(function ()
+			{
+				var isDisplay = false;
+				var TopBtn = $('#PageTopBtn');
+				TopBtn.css('bottom', '-200px');
+				var isDisplay = false;
+				$(window).scroll(function ()
+				{
+					if ($(this).scrollTop() > 100)
+					{
+						if (isDisplay == false)
+						{
+							isDisplay = true;
+							TopBtn.stop().animate({ 'bottom': '-10px' }, 200);
+						}
+					}
+					else
+					{
+						if (isDisplay)
+						{
+							isDisplay = false;
+							TopBtn.stop().animate({ 'bottom': '-200px' }, 200);
+						}
+					}
+				});
+				TopBtn.click(function ()
+				{
+					$('body,html').animate({
+						scrollTop: 0
+					}, 1400);
+					return false;
+				});
+			});</script>
+		<!---------
+*/JavaScript
+----------->
+		<nav>
+			<div class="drawer"> <a class="navbar_brand" href="#"><img src="img/logo.png" width="96" height="48"
+						alt="Wine Italy" /></a>
+				<div class="navbar_toggle"> <span class="navbar_toggle_icon"></span> <span class="navbar_toggle_icon"></span>
+					<span class="navbar_toggle_icon"></span> </div>
+			</div>
+			<div class="menu">
+				<ul>
+					<li class="logo"><a href="index.html"><img src="img/logo.png" width="96" height="48" alt="Wine Italy" /></a>
+					</li>
+					<li><a href="#winetour">ワインツアー</a></li>
+					<li><a href="#">お申込み</a></li>
+					<li><a href="#">会社案内</a></li>
+					<li><a href="#">お問い合わせ</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="viewer">
+			<ul>
+				<li><img src="img/top6.jpg" style="width: 100%;
+  height: auto;
+  max-height: 752px;
+  max-width: 1400px;" alt="白ワイン" /></li>
+				<li><img src="img/top7.jpg" style="width: 100%;
+  height: auto;
+  max-height: 752px;
+  max-width: 1400px;" alt="収穫" /></li>
+				<li><img src="img/top8.jpg" style="width: 100%;
+  height: auto;
+  max-height: 752px;
+  max-width: 1400px;" alt="ワイン農場" /></li>
+				<li><img src="img/top9.jpg" style="width: 100%;
+  height: auto;
+  max-height: 752px;
+  max-width: 1400px;" alt="ぶどう" /></li>
+				<li><img src="img/top10.jpg" width="3264" style="width: 100%;
+  height: auto;
+  max-height: 752px;
+  max-width: 1400px;" alt="酒造庫" /></li>
+			</ul>
+		</div>
+		<div id="preface">
+			<p class="left"><img src="img/leafl.png" width="200" height="160" alt="ぶどうの葉" /></p>
+			<p class="right"><img src="img/leafr.png" width="200" height="160" alt="ぶどうの葉" /></p>
+			<h2>イタリアでワイン巡り</h2>
+			<div id="italian">
+				<div id="pizza"><img src="img/pizza.jpg" width="1481" height="1065" alt="ワインとピザ" /></div>
+				<div id="pizzasent">
+					<p>　ワイン生産量が、世界第一位を誇るイタリア。地域ごとで異なるブドウの品種や醸造方法により、多種多様なワインの味を楽しむことが出来ます。</br>
+						　当サイトでは、実際に現地を訪れたスタッフが考案した、厳選されたワインツアーをご紹介しております。魚介やチーズとの相性抜群なイタリアンワインの味を、イタリアののどかな田園風景とともに、心ゆくまでお楽しみ下さいませ。
+					</p>
+					<a href="#" class="btn">お申込みはこちら<img src="img/arrow.png" width="13" height="13" alt="お申し込み" /></a>
+				</div>
+			</div>
+		</div>
+		<div id="info">
+			<h2>お知らせ</h2>
+			<dl>
+				<dt>2018.09.15</dt>
+				<dd><a href="#">当社のWebサイトをリニューアル公開しました。</a></dd>
+			</dl>
+			<dl class="">
+				<dt>2018.10.09</dt>
+				<dd><a href="#">ツアー料金が新しく改定されました。</a></dd>
+			</dl>
+			<dl>
+				<dt>2018.11.12</dt>
+				<dd><a href="#">年末年始休業のお知らせ。</a></dd>
+			</dl>
+			<dl>
+				<dt>2018.12.18</dt>
+				<dd><a href="#">シチリアワインツアー特集。</a></dd>
+			</dl>
+			<div class="infobtn"> <a href="#" class="btn">一覧を見る<img src="img/arrow.png" width="13" height="13"
+						alt="一覧を見る" /></a> </div>
+		</div>
+		<div id="winetour">
+			<p class="left"><img src="img/leafl.png" width="200" height="160" alt="ぶどうの葉" /></p>
+			<p class="right"><img src="img/leafr.png" width="200" height="160" alt="ぶどうの葉" /></p>
+			<h2>ワインツアー</h2>
+		</div>
+		<div id="tourinfo" class="fadein">
+			<div id="tosuka"> <a href="kaso.html"><img class="img" src="img/tour1.jpg" width="3750" height="2500"
+						alt="トスカーナワインツアー" /></a>
+				<div id="tosukainfo">
+					<div id="grape"><img src="img/grape.png" width="2954" height="2300" alt="ぶどうの葉" /></div>
+					<h3>トスカーナワインツアー</h3>
+					<p>　トスカーナでは、イタリアワインの顔ともいえる「キャンティ」の果実味豊かで、ほどよく酸味の効いた、飲みやすいワインの味を楽しむことができます。</p>
+					<div id="link"> <a href="kaso.html">
+							<p>さらに詳しく</p>
+							<img src="img/arrowb.png" style="height: 12px;width: 12px;" alt="矢印" />
+						</a></div>
+				</div>
+			</div>
+			<div id="piemo" class="fadein"><img class="img" src="img/tour2.png" width="2125" height="1416"
+					alt="ピエモンテワインツアー" />
+				<div id="piemoinfo">
+					<div id="grape"><img src="img/grapel.png" width="2954" height="2300" alt="ぶどうの葉" /></div>
+					<h3>ピエモンテワインツアー</h3>
+					<p>　ピエモンテでは、ワインの王様と称えられる「バローロ」の、長期間じっくりと熟成して醸造られた、力強く濃密なワインの味を堪能できます。</p>
+					<div id="link"><a href="#">
+							<p>さらに詳しく</p>
+							<img src="img/arrowb.png" style="height: 12px;width: 12px;" alt="矢印" />
+						</a></div>
+				</div>
+			</div>
+			<div id="tosuka" class="fadein"><img class="img" src="img/tour3.jpg" width="1920" height="1281"
+					alt="ヴェネトワインツアー" />
+				<div id="tosukainfo">
+					<div id="grape"><img src="img/grape.png" width="2954" height="2300" alt="ぶどうの葉" /></div>
+					<h3>ヴェネトワインツアー</h3>
+					<p>　ヴェネトでは、世界中から愛されるスパークリングワイン「プロセッコ」の、爽やかでフルーティな口当たりが心地よいワインの味を堪能できます。</p>
+					<div id="link"> <a href="#">
+							<p>さらに詳しく</p>
+							<img src="img/arrowb.png" style="height: 12px;width: 12px;" alt="矢印" />
+						</a></div>
+				</div>
+			</div>
+			<div id="piemo" class="fadein"><img class="img" src="img/tour4.jpg" width="1920" height="1278"
+					alt="シチリアテワインツアー" />
+				<div id="piemoinfo">
+					<div id="grape"><img src="img/grapel.png" width="2954" height="2300" alt="ぶどうの葉" /></div>
+					<h3>シチリアテワインツアー</h3>
+					<p>　シチリアでは、魚介と相性の良い、すっきりとした白ワインが多く、軽めのものから濃密なもの、そして甘口など、様々なタイプの白ワインが楽しめます。</p>
+					<div id="link"> <a href="#">
+							<p>さらに詳しく</p>
+							<img src="img/arrowb.png" style="height: 12px;width: 12px;" alt="矢印" />
+						</a></div>
+				</div>
+			</div>
+			<div class="tourbtn">
+				<button type="button" class="btn">
+					<a href="#"><img src="img/winel.png" style="height: 110px;" alt="ワインとワイングラス" />
+						<p>お申込みはこちら</p>
+						<img src="img/winer.png" style="height: 110px;" alt="ワインとワイングラス" />
+					</a>
+				</button>
+			</div>
+		</div>
+		<div id="access">
+			<h2>アクセス</h2>
+			<p>名古屋栄駅が最寄り駅です</p>
+			<iframe
+				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.4535403026794!2d136.90221505118464!3d35.17024688022001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600370d4e416992b%3A0x6eb049b74db0b8c!2z44CSNDYwLTAwMDMg5oSb55-l55yM5ZCN5Y-k5bGL5biC5Lit5Yy66Yym77yT5LiB55uuIOWRieacjeeUuumAmuOCig!5e0!3m2!1sja!2sjp!4v1548489981457"
+				width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
+		</div>
+		<div id="footer"> <a href="#"><img src="img/logo.png" width="180" height="90" alt="Wine Italy" /></a>
+			<p class="bigger">名古屋市中区錦三丁目１－２－３</p>
+			<p>ご予約・お問い合わせはこちら</p>
+			<p class="big">052-123-5678</p>
+			<p>営業時間：10:00~19:00</p>
+			<a href="#"><img src="img/face.png" width="32" height="32" alt="facebook" /></a> <a href="#"><img
+					src="img/insta.png" width="32" height="32" alt="instagram" /></a>
+			<div>
+				<p class="small kaisha"><a href="#">企業概要</a></p>
+				<p class="small kaisha"><a href="#">プライバシーポシリー</a></p>
+				<p class="small kaisha"><a href="#">お問い合わせ</a></p>
+				<p class="small">Copyright(c) 2019 Shoji Yamada WINE All Rights Reserved.</p>
+			</div>
+		</div>
+		<p id="PageTopBtn"><a href="#wrap">⬆Page Top</a></p>
+		<script src="js/main.js"></script>
+	</body>
+
+</html>

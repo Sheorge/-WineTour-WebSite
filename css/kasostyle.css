@@ -1,0 +1,589 @@
+@charset "utf-8";
+
+/* CSS Document */
+body {
+    font-size: 18px;
+    font-family: Georgia, 游明朝, "Yu Mincho", YuMincho, "Hiragino Mincho ProN", HGS明朝E, メイリオ, Meiryo, serif;
+    background-color: #EAEEE5;
+    animation: fadeIn 5s ease 0s 1 normal;
+    -webkit-animation: fadeIn 5s ease 0s 1 normal;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+a {
+    color: #fff;
+    transition-duration: 0.4s;
+    text-decoration: none;
+}
+
+a:hover {
+    transform: scale(1.08);
+}
+
+a:active {
+    transform: scale(1.00);
+    transition-duration: 0.1s;
+}
+
+.pics {
+    display: none;
+}
+
+nav {
+    width: 100%;
+    height: 52px;
+    position: fixed;
+    background: #350;
+    z-index: 99999;
+}
+
+nav a {
+    color: #fff;
+}
+
+.drawer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    height: 52px;
+    padding: 0 1em;
+}
+
+.navbar_toggle {
+    z-index: 9999;
+}
+
+.navbar_toggle_icon {
+    position: relative;
+    display: block;
+    height: 2px;
+    width: 30px;
+    background: #fff;
+    -webkit-transition: ease .5s;
+    transition: ease .5s;
+}
+
+.navbar_toggle_icon:nth-child(1) {
+    top: 0;
+}
+
+.navbar_toggle_icon:nth-child(2) {
+    margin: 8px 0;
+}
+
+.navbar_toggle_icon:nth-child(3) {
+    top: 0;
+}
+
+.navbar_toggle.open .navbar_toggle_icon:nth-child(1) {
+    top: 10px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.navbar_toggle.open .navbar_toggle_icon:nth-child(2) {
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    opacity: 0;
+}
+
+.navbar_toggle.open .navbar_toggle_icon:nth-child(3) {
+    top: -10px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.menu {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    -webkit-transition: ease .5s;
+    transition: ease .5s;
+    z-index: 1000;
+}
+
+.menu ul li {
+    padding: 2em;
+    border-bottom: 1px solid #CCC;
+    background: #350;
+    opacity: 0.85;
+}
+
+.menu.open {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media screen and (min-width: 768px) {
+    .navbar_brand {
+        display: none;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .navbar_toggle {
+        display: none;
+    }
+
+    .drawer {
+        padding: 0;
+    }
+
+    .menu {
+        width: 100%;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    .menu ul {
+        height: 52px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 0 auto;
+        width: 1000px;
+    }
+
+    .menu ul li {
+        padding: 0 5.4%;
+        border-bottom: none;
+    }
+
+    .menu a:hover {
+        opacity: 0.6;
+    }
+}
+
+#tosuka {
+    max-width: 1600px;
+    margin: 0 auto;
+    box-shadow: 0px 0px 100px 30px #bba;
+}
+
+#tosukatour {
+    height: 752px;
+    background: linear-gradient(270deg, rgba(234, 238, 229, 1)42%, transparent 70%), url("../img/firenze.jpg");
+    background-size: auto 752px;
+    background-repeat: no-repeat;
+}
+
+#tosukainfo {
+    padding: 130px 3% 0 61%;
+}
+
+h1 {
+    text-align: center;
+    line-height: 60px;
+    font-size: 44px;
+    font-family: Georgia, 游明朝, "Yu Mincho", YuMincho, "Hiragino Mincho ProN", HGS明朝E, メイリオ, Meiryo, serif;
+}
+
+#tosukatour p {
+    padding: 30px 0 45px;
+    font-size: 15px;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "游ゴシック Medium", YuGothic, YuGothicM, "Hiragino Kaku Gothic ProN", メイリオ, Meiryo, sans-serif;
+    line-height: 36px;
+}
+
+#btn {
+    text-align: center;
+}
+
+#tosukainfo .btn {
+    border-radius: 10px;
+    background-color: #460;
+    padding: 20px 35px 20px 40px;
+    color: white;
+    font-size: 18px;
+    width: 246px;
+    box-shadow: 10px 15px 50px 2px #999;
+    font-family: Georgia, 游明朝, "Yu Mincho", YuMincho, "Hiragino Mincho ProN", HGS明朝E, メイリオ, Meiryo, serif;
+    transition-duration: 0.4s;
+}
+
+#tosukainfo .btn:hover {
+    transform: scale(1.08);
+}
+
+#tosukainfo .btn:active {
+    transform: scale(1.00);
+    transition-duration: 0.1s;
+}
+
+#tosukainfo .btn img {
+    padding-left: 10px;
+}
+
+#toursche {
+    background-color: #460;
+    font-size: 36px;
+    color: #fff;
+    padding: 90px 0 10px;
+    text-align: center;
+    z-index: 999;
+    position: relative;
+}
+
+#toursche .left {
+    margin-top: -60px;
+    margin-left: 20px;
+    float: left;
+}
+
+#toursche .right {
+    margin-top: -60px;
+    margin-right: 20px;
+    float: right;
+}
+
+#toursche h2 {
+    margin: 0 auto;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 20px;
+    width: 55%;
+    text-align: center;
+    letter-spacing: 0.145em;
+}
+
+#scheinfo {
+    max-width: 1400px;
+    margin: 0 auto;
+    font-size: 16px;
+    box-shadow: 0px 0px 100px 30px #bba;
+    z-index: 1;
+}
+
+#scheinfo p {
+    padding-top: 60px;
+    width: 30%;
+    line-height: 40px;
+    height: 400px;
+}
+
+#monte {
+    height: 400px;
+    background: linear-gradient(90deg, rgba(234, 238, 229, 1)46%, transparent 65%), url("../img/sche1.png");
+    background-size: auto 400px;
+    background-position: right;
+}
+
+#monte p {
+    padding-left: 8%;
+}
+
+#canti {
+    height: 400px;
+    background: linear-gradient(270deg, rgba(234, 238, 229, 1)46%, transparent 65%), url("../img/sche2.png");
+    background-size: auto 400px;
+}
+
+#canti p {
+    padding-left: 57%;
+}
+
+#gure-ve {
+    height: 400px;
+    background: linear-gradient(90deg, rgba(234, 238, 229, 1)46%, transparent 65%), url("../img/sche3.png");
+    background-size: auto 400px;
+    background-position: right;
+}
+
+#gure-ve p {
+    padding-left: 10%;
+}
+
+#fami {
+    height: 400px;
+    background: linear-gradient(270deg, rgba(234, 238, 229, 1)46%, transparent 65%), url("../img/sche4.png");
+    background-size: auto 400px;
+}
+
+#fami p {
+    padding-left: 57%;
+}
+
+#last {
+    height: 400px;
+    background: linear-gradient(90deg, rgba(234, 238, 229, 1)46%, transparent 65%), url("../img/sche5.png");
+    background-size: auto 400px;
+    background-position: right;
+}
+
+#last p {
+    padding-left: 10%;
+}
+
+#omoushi {
+    background: linear-gradient(rgba(234, 238, 229, 0.4)0%, transparent 100%), url("../img/vineyard.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 500px;
+}
+
+#touka {}
+
+.omoushibtn {
+    text-align: center;
+}
+
+#omoushi .btn {
+    margin: 200px;
+    height: 130px;
+    border-radius: 10px;
+    background-color: #460;
+    color: white;
+    font-size: 18px;
+    box-shadow: 0px 0px 100px 1px #ccc;
+    padding: 0 20px;
+    transition-duration: 0.4s;
+}
+
+#omoushi .btn:hover {
+    transform: scale(1.08);
+}
+
+#omoushi .btn:active {
+    transform: scale(1.00);
+    transition-duration: 0.1s;
+}
+
+#omoushi .btn p {
+    float: left;
+    font-family: Georgia, 游明朝, "Yu Mincho", YuMincho, "Hiragino Mincho ProN", HGS明朝E, メイリオ, Meiryo, serif;
+    font-size: 22px;
+    line-height: 22px;
+    height: auto;
+    width: auto;
+    padding: 55px 20px;
+}
+
+#omoushi .btn img {
+    float: left;
+    padding: 8px;
+}
+
+#footer {
+    text-align: center;
+    background-color: #350;
+    color: #fff;
+    font-size: 16px;
+    padding-bottom: 20px;
+}
+
+#footer p {
+    padding: 15px;
+}
+
+.big {
+    font-size: 30px;
+}
+
+#footer img {
+    padding: 20px;
+    display: inline-block;
+}
+
+.small {
+    font-size: 12px;
+}
+
+.small a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.kaisha {
+    display: inline-block;
+}
+
+#PageTopBtn {
+    position: fixed;
+    bottom: -10px;
+    right: 10px;
+    font-size: 18px;
+}
+
+#PageTopBtn a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    background: #350;
+    text-align: center;
+    border-radius: 5%;
+    outline: none;
+}
+
+#PageTopBtn a:hover {
+    text-decoration: none;
+    color: #350;
+    background: #efd;
+}
+
+#PageTopBtn {
+    font-size: 18px;
+}
+
+#PageTopBtn a {
+    width: 150px;
+    height: 30px;
+    padding: 24px 0;
+}
+
+@media screen and (max-width: 768px) {
+    #PageTopBtn {
+        font-size: 10px;
+    }
+
+    #PageTopBtn a {
+        width: 70px;
+        height: 13px;
+        padding: 17px 0;
+    }
+
+    .pics {
+        display: block;
+        width: 100%;
+        height: auto;
+        box-shadow: 0px 10px 20px 5px #bcb;
+        box-shadow: 0px 5px 30px 5px #bbb;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    h1 {
+        margin-top: 45px;
+        font-size: 30px;
+        line-height: 50px;
+    }
+
+    #btn {
+        padding-bottom: 60px;
+    }
+
+    #tosukainfo {
+        padding: 0;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    #tosukatour {
+        background: none;
+        height: auto;
+    }
+
+    #toursche h2 {
+        width: 90%;
+        font-size: 30px;
+    }
+
+    #tosukatour p {}
+
+    #toursche {
+        padding: 60px 0 45px;
+    }
+
+    #toursche img {
+        display: none;
+    }
+
+    #scheinfo p {
+        width: 80%;
+        margin: 0 auto;
+        height: auto;
+        padding-bottom: 45px;
+    }
+
+    #monte {
+        background: none;
+        height: auto;
+    }
+
+    #monte p {
+        padding-left: 0;
+    }
+
+    #canti {
+        background: none;
+        height: auto;
+    }
+
+    #canti p {
+        padding-left: 0;
+    }
+
+    #gure-ve {
+        background: none;
+        height: auto;
+    }
+
+    #gure-ve p {
+        padding-left: 0;
+    }
+
+    #fami {
+        background: none;
+        height: auto;
+    }
+
+    #fami p {
+        padding-left: 0;
+    }
+
+    #last {
+        background: none;
+        height: auto;
+    }
+
+    #last p {
+        padding-left: 0;
+    }
+
+    .omoushibtn {
+        padding-top: 75px;
+    }
+
+    #omoushi {
+        height: 250px;
+    }
+
+    #omoushi .btn {
+        margin: 0;
+        height: 100px;
+    }
+
+    #omoushi .btn p {
+        padding: 0 15px;
+    }
+
+    #omoushi img {
+        display: none;
+    }
+}
